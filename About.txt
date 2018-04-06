@@ -1,5 +1,5 @@
 El proyecto agenda-recitales buscará armar una agenda completa de recitales 
-basándose en las base de datos de diferentes redes sociales como Facebook o LastFM, o agregándo los eventos.
+basándose en las base de datos de diferentes redes sociales como Facebook o LastFM, o agregando los eventos.
 
 Se le mostrará al usuario un listado de los eventos basándose en una ubicación o través de un buscador. 
 Cada evento contendrá un mapa con la locación, el horario de inicio, información acerca del artista y el link para comprar la entrada.
