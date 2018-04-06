@@ -54,6 +54,8 @@ GET /event/{id}/description Get the description of the event
 GET /event/{id}/location Get the event location
 GET /event/{id}/link-ticket Get the link to buy ticketevent
 GET /event/{id}/artist Get the event artist (por ahora string, no es objeto)
+GET /event/location/{id} Get events by location
+GET /event/{cords} Get events by cords
 
 PUT /event/{id} update event
 
@@ -71,6 +73,7 @@ GET /location/{id} Get location
 GET /location/{id}/name Get the name of the location
 GET /location/{id}/cords Get the cords of the location
 GET /location/{id}/events Get events by location
+GET /location/{cords} Get locations by cord
 
 PUT /location/{id} update location
 
