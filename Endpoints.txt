@@ -1,3 +1,12 @@
+//TODO
+1) Todo plural
+2) Asociar al evento
+3) Sacar o comentar todos los metodos que no son del core
+4) Ordenar
+5) Agregar  get usuario por event (get /events/{id}/users)
+6) Definir arbol posta: EVENTS -> LOCATION
+                               -> USERS
+ 
 models:
 - event:
 "id" 	
@@ -5,7 +14,7 @@ models:
 "description"
 "location"
 "link-ticket"
-"artist"
+"user_id"
 
 - location:
 "id"
@@ -23,12 +32,11 @@ models:
 "gender"
 
 
-** HTTP USERS: user: Operations about users
+#### USERS
 POST /user  Create user
 POST /user/createWithArray Creates list of users with given input array
 
-GET
-/user/login Logs user into the system
+GET/user/login Logs user into the system
 GET /user/logout Logs out current logged in user session
 GET /user/{username} Get user by user name
 GET /user/me Get my user
@@ -39,21 +47,15 @@ PUT /user/{username} Updated user
 DELETE /user/{username} Delete user
 
 
-
-
-** HTTP Events: event: Operations about events
+#### EVENTS
 POST /event  Create event
-POST /event/createWithArray Creates list of event with given input array
-POST /event/createWithFacebookEvent Creates events via Facebook API
-POST /event/createWithLastFMEvent Creates events via LastFM API
-
 
 GET /event/{id} Get event
 GET /event/{id}/name Get the name of the event
 GET /event/{id}/description Get the description of the event
 GET /event/{id}/location Get the event location
 GET /event/{id}/link-ticket Get the link to buy ticketevent
-GET /event/{id}/artist Get the event artist (por ahora string, no es objeto)
+GET /event/{id}/user_id Devuelve todos los usuarios de 1 evento en particular
 GET /events/name Get events by name (buscador)
 GET /events/location/{id} Get events by location
 GET /events/{cords} Get events by cords
@@ -61,21 +63,29 @@ GET /events/{cords} Get events by cords
 PUT /event/{id} update event
 
 DELETE /event/{id} Delete event
+DELETE /event/{id}/user/{id} Saco un usuario del evento
 
 
-** HTTP Locations: location: Operations about locations
+#### LOCATIONS
 POST /location  Create location
-POST /location/createWithArray Creates list of locations with given input array
-POST /location/createWithFacebookLocation Creates location via Facebook API
-*POST /location/event Creates event into location
-
 
 GET /location/{id} Get location
 GET /location/{id}/name Get the name of the location
-GET /location/{id}/cords Get the cords of the location
-GET /location/{id}/events Get events by location
-GET /locations/{cords} Get locations by cord
 
 PUT /location/{id} update location
 
 DELETE /location/{id} Delete location
+
+
+Mejoras para el futuro
+
+// POST /event/createWithArray Creates list of event with given input array
+// POST /event/createWithFacebookEvent Creates events via Facebook API
+// POST /event/createWithLastFMEvent Creates events via LastFM API
+
+
+//POST /location/createWithArray Creates list of locations with given input array
+//POST /location/createWithFacebookLocation Creates location via Facebook API
+
+// GET /location/{id}/cords Get the cords of the location
+// GET /locations/{cords} Get locations by cord
